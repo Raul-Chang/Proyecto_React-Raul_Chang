@@ -1,0 +1,11 @@
+.cart-widget{
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.cart-widget:hover{
+    background-color: rgba(255, 255, 0, 0.9);
+    opacity: 0.7;
+}
