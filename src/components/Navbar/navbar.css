@@ -4,7 +4,7 @@
     text-align: center;
     height: 4rem;
     align-items: center;
-    background-color: rgb(241, 43, 82);
+    background-color: rgb(73, 43, 241);
     justify-content: space-between;
     
 }
@@ -18,7 +18,7 @@
 
 .navbar-a{
     width: 8rem;
-    height: 2rem;
+    height: 3rem;
     display: block;
     background-color: black;
     color: yellow;
@@ -26,10 +26,11 @@
     border-radius: 1rem;
     justify-content: center;
     align-content: center;
-    padding-top: 10px;
+    padding-top: 16px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+    font-size: 22px;
 }
 
 .navbar-a:hover{
