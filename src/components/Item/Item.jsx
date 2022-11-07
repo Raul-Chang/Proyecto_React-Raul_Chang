@@ -20,7 +20,7 @@ function Item(product) {
         <h4 className="priceTag">$ {product.price}</h4>
       </div>
       
-        <Button>Agregar al Carro</Button>
+        <Button>Mas Información!</Button>
         
       </Link>
     </div>
