@@ -4,6 +4,7 @@ import "./itemdetail.css";
 import { Link } from "react-router-dom";
 
 
+
 function ItemDetail(product){
 
     return (
@@ -17,7 +18,7 @@ function ItemDetail(product){
             </Link>
             <h2>{product.title}</h2>
             <p>{product.description}</p>
-            <h4 className="detail-price">$ {product.price}</h4> 
+            <h4 className="detail-price">$ {product.price}</h4>             
             
             <div>
               <Button>Agregar al Carro</Button>
