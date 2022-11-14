@@ -8,7 +8,7 @@ function Navbar(){
         <navbar className= "navbar">
         <div className="navbar-logtit">
             <Link to="/">
-                <img src="img/logo.png" alt="Logo" className="navbar-img" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2tUENAo_SUrB7paxVUNY00oNc95LDLCdjlA&usqp=CAU" alt="Logo" className="navbar-img" />
             </Link>            
             <h3 className="navbar-title">World of PC!!</h3>   
         </div>
