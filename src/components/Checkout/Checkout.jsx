@@ -20,9 +20,7 @@ function Checkout() {
         console.erro(error)
       })
       .finally( () => {
-        setIsLoading(false)
-        console.log(orderData.buyer)  
-        console.log(orderData.buyer.name)
+        setIsLoading(false)        
     })
       }, [orderid]);
    
@@ -30,14 +28,12 @@ function Checkout() {
       if (isLoading)
       return (      
           <Loader color="red" size={160} speed={0.8} />      
-      );
-
-      
+      ); 
 
   return (
     <div>
         <div>
-            <h1> {orderData.buyer.name} gracias por tu compra</h1>
+            <h1> {orderData.buyer.name} Gracias por tu Compra</h1>
 
             <h2>Tu numero de orden es:</h2>
             <h3>{orderid}</h3>
