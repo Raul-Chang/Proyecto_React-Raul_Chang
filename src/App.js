@@ -4,6 +4,9 @@ import Navbar from './components/Navbar/NavBar';
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./storage/CartContext";
+import CartView from "./components/CartView/CartView";
+import Checkout from './components/Checkout/Checkout';
+
 
 function App() {  
   return (
@@ -21,9 +24,14 @@ function App() {
             element={<ItemListContainer greeting="Bienvenidos a World of PC"/>}
           />
           <Route path="/detalle/:id" element={<ItemDetailContainer/>} />
+          <Route path="/cart" element={<CartView/>} />
+          <Route
+              path="/checkout/:orderid"
+              element={<Checkout/>}
+            />
         </Routes>
       </BrowserRouter> 
-    </CartContextProvider>        
+    </CartContextProvider>     
     </div>
   );
 }

@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "../Button/Button";
 import "./itemdetail.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount"
-import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import cartContext from "../../storage/CartContext";
+
 
 function ItemDetail(product){
 
   const [isInCart, setIsInCart] = useState(false);
 
-  const navigate = useNavigate();
+  const { addToCart } = useContext(cartContext);
 
   function onAddToCart(count) {    
 
@@ -20,8 +21,16 @@ function ItemDetail(product){
       icon: "success",
     });
 
+    const itemForCart = {
+      ...product,
+      count,
+    };
+
+    addToCart(itemForCart);
+
     setIsInCart(true);
   }
+
 
   return (
     <div className="detail-card bg">

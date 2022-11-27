@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Navbar(){
     return(
-        <navbar className= "navbar">
+        <div className= "navbar">
         <div className="navbar-logtit">
             <Link to="/">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2tUENAo_SUrB7paxVUNY00oNc95LDLCdjlA&usqp=CAU" alt="Logo" className="navbar-img" />
@@ -19,9 +19,10 @@ function Navbar(){
             <Link to="/category/lg" className="navbar-a">LG</Link>
             <Link to="/category/samsung" className="navbar-a">Samsung</Link>
             <Link to="/category/viewsonic" className="navbar-a">Viewsonic</Link>       
-            <CartWidget/>        
+            <Link to="/cart">  <CartWidget/> </Link>
+                   
         </div>         
-        </navbar>
+        </div>
     )  
 }
 

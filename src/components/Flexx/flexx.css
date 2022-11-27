@@ -1,6 +1,9 @@
 .flex{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-wrap: wrap;    
     justify-content: space-around;
+  }
+
+  .margin{
+    margin-top: 8rem;
   }

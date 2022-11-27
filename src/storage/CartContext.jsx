@@ -17,13 +17,11 @@ export function CartContextProvider(props) {
           return itemInCart;
         }
       });
-
       setCart(newCart);
-    } else {      
-      setCart((newCart) => {
-        newCart.push(itemData);
-        return newCart;
-      });
+    } else {
+      const newCart = [...cart];
+      newCart.push(itemData);
+      setCart(newCart);
     }
   }
 
@@ -35,28 +33,37 @@ export function CartContextProvider(props) {
     return total;
   }
 
-  function totalPriceInCart(){
+  function totalPriceInCart() {
+    let totalPrice = 0;
+    cart.forEach((itemInCart) => {
+      totalPrice = totalPrice + itemInCart.count * itemInCart.price;
+    });
+    return totalPrice;
+  }
+
+  function removeItem(itemId) {
     
-  }
+      let newCart = cart.filter((itemFound) => itemFound.id !== itemId);
+      console.log(newCart)
+      setCart(newCart);
+    } 
+  
 
-  function removeItem(itemId){
-    /*  cart.filter */
-  }
-
-  function clear(){
-    /*  */
+  function clear() {
+    setCart([]);
   }
 
   const value = {
     cart,
     addToCart,
     totalItemsInCart,
+    removeItem,
+    totalPriceInCart,
+    clear,
   };
 
-  //3.Creamos el "value" para los componentes que consuman el context
 
   return (
-    //4. retornamos el Context Provider con el value creado
     <cartContext.Provider value={value}>{props.children}</cartContext.Provider>
   );
 }
