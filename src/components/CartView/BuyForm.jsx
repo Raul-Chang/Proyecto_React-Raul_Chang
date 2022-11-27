@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import InputForm from "./InputForm";
-import swal from "sweetalert";
-
-
-
 
 export default function BuyForm(props) {
   let [userData, setUserData] = useState({
