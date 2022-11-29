@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
 import InputForm from "./InputForm";
 
 export default function BuyForm(props) {
   let [userData, setUserData] = useState({
     name: "",
     email: "",
+    emailrep: "",
     phone: "",
     address: "",
   }); 
@@ -13,6 +15,8 @@ export default function BuyForm(props) {
   let errPhone = false
   let errEmail = false
   let errAddress = false
+  let errEmailrep = false
+  
 
   function onInputChange(evt) {
     let inputName = evt.target.name;
@@ -22,28 +26,35 @@ export default function BuyForm(props) {
     newUserData[inputName] = value;
     setUserData(newUserData);
 
-    if(userData.name !== "" &&userData.name.length < 20){
+    if(userData.name !== "" &&userData.name.length < 25){
       let errorName = document.getElementById("name");
       errorName.style.display = "none"
       let inputName = document.querySelector(".name");
       inputName.style.borderColor = "black"
       inputName.style.borderWidth = "medium"
     } 
-    if (userData.phone !== "" && userData.phone.length < 20){
+    if (userData.phone !== "" && userData.phone.length < 15){
       let errorPhone = document.getElementById("phone");
       errorPhone.style.display = "none"
       let inputPhone = document.querySelector(".phone");
       inputPhone.style.borderColor = "black"
       inputPhone.style.borderWidth = "medium"
     } 
-    if (userData.email !== "" && userData.email.length < 20){
+    if (userData.email !== "" && userData.email.length < 25){
       let errorEmail = document.getElementById("email");
       errorEmail.style.display = "none"
       let inputEmail = document.querySelector(".email");
       inputEmail.style.borderColor = "black"
       inputEmail.style.borderWidth = "medium"
     } 
-    if (userData.address !== "" && userData.address.length < 30){
+    if (userData.emailrep !== "" && userData.emailrep.length < 25){
+      let errorEmailrep = document.getElementById("emailrep");
+      errorEmailrep.style.display = "none"
+      let inputEmailrep = document.querySelector(".emailrep");
+      inputEmailrep.style.borderColor = "black"
+      inputEmailrep.style.borderWidth = "medium"
+    } 
+    if (userData.address !== "" && userData.address.length < 40){
       let errorAddres = document.getElementById("address");
       errorAddres.style.display = "none"
       let inputAddress = document.querySelector(".address");
@@ -60,7 +71,7 @@ export default function BuyForm(props) {
   }
 
   function validar(){
-    if(userData.name === "" || userData.name.length > 20){
+    if(userData.name === "" || userData.name.length > 25){
       let errorName = document.getElementById("name");
       errorName.style.display = "flex"
       let inputName = document.querySelector(".name");
@@ -68,7 +79,7 @@ export default function BuyForm(props) {
       inputName.style.borderWidth = "thick"    
       errName = true  
     } 
-    if (userData.phone === "" || userData.phone.length > 20){
+    if (userData.phone === "" || userData.phone.length > 15){
       let errorPhone = document.getElementById("phone");
       errorPhone.style.display = "flex"
       let inputPhone = document.querySelector(".phone");
@@ -76,7 +87,7 @@ export default function BuyForm(props) {
       inputPhone.style.borderWidth = "thick"
       errPhone = true  
     } 
-    if (userData.email === "" || userData.email.length > 20){
+    if (userData.email === "" || userData.email.length > 25){
       let errorEmail = document.getElementById("email");
       errorEmail.style.display = "flex"
       let inputEmail = document.querySelector(".email");
@@ -84,7 +95,22 @@ export default function BuyForm(props) {
       inputEmail.style.borderWidth = "thick"
       errEmail = true 
     } 
-    if (userData.address === "" || userData.address.length > 30){
+    if (userData.emailrep === "" || userData.emailrep.length > 25){
+      let errorEmailrep = document.getElementById("emailrep");
+      errorEmailrep.style.display = "flex"
+      let inputEmailrep = document.querySelector(".emailrep");
+      inputEmailrep.style.borderColor = "red"
+      inputEmailrep.style.borderWidth = "thick"
+      errEmailrep = true
+      if(userData.emailrep !== userData.email){
+        swal({
+          title: "Error en Compra",
+          text: `Los campos de email deben ser iguales`,
+          icon: "warning",
+        });
+      }}
+      
+    if (userData.address === "" || userData.address.length > 40){
       let errorAddres = document.getElementById("address");
       errorAddres.style.display = "flex"
       let inputAddress = document.querySelector(".address");
@@ -105,8 +131,13 @@ export default function BuyForm(props) {
         name="name"
         value={userData.name}
         onInputChange={onInputChange}           
-      />     
-
+      />       
+      <InputForm
+        title="Teléfono:"
+        name="phone"
+        value={userData.phone}
+        onInputChange={onInputChange}
+      />
       <InputForm
         title="Email:"
         name="email"
@@ -114,9 +145,9 @@ export default function BuyForm(props) {
         onInputChange={onInputChange}
       />
       <InputForm
-        title="Teléfono:"
-        name="phone"
-        value={userData.phone}
+        title="Repetir Email:"
+        name="emailrep"
+        value={userData.emailrep}
         onInputChange={onInputChange}
       />
       <InputForm

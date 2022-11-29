@@ -46,9 +46,9 @@ function CartView() {
   }
 
   return (
-    <div >
+    <div className="bg">
       <div>
-      <h1>Productos en tu Carro de Compras</h1>
+      <h1 className="checkout-yellow">Productos en tu Carro de Compras</h1>
        </div>
       <Flexx >
       <div className="bg">
@@ -58,7 +58,7 @@ function CartView() {
           <img src={cartItem.image} alt={cartItem.title} />
           </div>
           <div>
-          <h3>{cartItem.title}</h3>
+          <h3 className="cart-title">{cartItem.title}</h3>
           <h4>$ {cartItem.price}</h4>
           <h4>Cantidad: {cartItem.count}</h4>
           <h4>Precio a pagar: {cartItem.count * cartItem.price}</h4>
@@ -74,7 +74,7 @@ function CartView() {
       <Button type="danger" onClick={clear}>
         Vaciar Carrito
       </Button>
-      <h2>Total a pagar: ${totalPriceInCart()}</h2>
+      <h2 className="checkout-yellow">Total a pagar: ${totalPriceInCart()}</h2>
       <BuyForm onSubmit={createBuyOrder} />
       </div>      
       </Flexx>

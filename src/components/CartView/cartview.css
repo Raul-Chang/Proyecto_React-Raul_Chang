@@ -4,14 +4,20 @@
     height: 350px;
     margin: 2rem;
     padding: 1rem;
-    font-size: 20px;
+    font-size: 22px;
     display: flex;    
-    justify-items: center;
-    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+}
+
+.cart-item h3{
+    width: 400px;
 }
 
 .cart-item img{
-    width: 300px;
+    width: 350px;
+    margin-top: 1rem;
 }
 
 .form{
@@ -19,7 +25,7 @@
     font-size: 24px;
     font-weight: bold;
     width: 450px;
-    height: 450px;
+    height: 500px;
 }
 
 .form-bg{
@@ -59,4 +65,20 @@
     margin: 0;
     color: red;
     
+}
+
+.checkout-data{
+    background-color: black;    
+}
+
+.checkout-yellow {
+    color: yellow;
+}
+
+.checkout-white {
+    color: white;
+}
+
+.cart-title{
+    color: red;
 }
