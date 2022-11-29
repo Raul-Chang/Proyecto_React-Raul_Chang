@@ -1,7 +1,7 @@
 .cart-item{
     background-color: lightskyblue;
-    width: 900px;
-    height: 350px;
+    width: 650px;
+    height: 400px;
     margin: 2rem;
     padding: 1rem;
     font-size: 22px;
@@ -12,12 +12,12 @@
 }
 
 .cart-item h3{
-    width: 400px;
+    width: 300px;
 }
 
 .cart-item img{
-    width: 350px;
-    margin-top: 1rem;
+    width: 300px;
+    margin-top: 15%;
 }
 
 .form{
